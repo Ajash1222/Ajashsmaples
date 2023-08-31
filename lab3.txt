@@ -1,0 +1,113 @@
+import java.util.Scanner;
+class Stu{
+    int sid;
+    String sname;
+    int marks;
+    void input()
+    {
+    Scanner sc=new Scanner(System.in);
+    System.out.print("enter the stu details");
+    sid=sc.nextInt();
+    sname=sc.next();
+    marks=sc.nextInt();
+    
+    }
+    void output()
+    {
+        System.out.println(sid+" "+sname+" "+marks);
+        
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Stu s1=new Stu();
+	    s1.input();
+	    s1.output();
+	}
+}
+
+//2
+class Bankcustomer
+{
+  int acno;
+  String atype;
+  int amt;
+    Bankcustomer ()
+  {
+    acno = 123455;
+    atype = "savinng";
+    amt = 10000;
+  }
+  Bankcustomer (int x, String y, int z)
+  {
+    acno = x;
+    atype = y;
+    amt = z;
+  }
+  void display ()
+  {
+    System.out.println ("enetr the customer details " + acno + " " + atype +
+			" " + amt);
+  }
+
+}
+
+
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Bankcustomer c = new Bankcustomer ();
+      c.display ();
+      Bankcustomer c1=new Bankcustomer(12345,"current",40000);
+      c1.display();
+
+  }
+}
+//3
+class Person 
+{
+    int pid;
+    String pname;
+    Person()
+    {
+        pid=1234;
+        pname="ajash";
+    }
+}
+class Stu extends Person
+{
+    int marks;
+    Stu()
+    {
+        marks=300;
+    }
+    void Display()
+    {
+        System.out.println(pid+" "+pname+" "+marks);
+    }
+}
+class Emp extends Person
+{
+   int sal;
+   Emp()
+   {
+       sal=40000;
+   }
+   void Display()
+   {
+        System.out.println(pid+" "+pname+" "+sal);
+    }
+   
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Stu s1=new Stu();
+		s1.Display();
+		Emp e1=new Emp();
+		e1.Display();
+	}
+}
