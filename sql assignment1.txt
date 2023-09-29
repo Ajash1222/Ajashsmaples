@@ -1,0 +1,13 @@
+create table groupss( GID int primary key, GNAME varchar(10))
+desc groupss 
+insert into groupss values(1,'ECE'),(2,'CSE'),(3,'IT')
+select * from groupss
+create table students(rollno int primary key,sname varchar(10) not null,marks int check (marks<=100) not null,
+GID int,constraint fk foreign key(GID) references groupss(GID))
+insert into students values(100,'surya',75,1),(101,'ravi',67,1),(102,'sita',97,2)
+desc students
+select * from students
+select * from groupss A  inner join students B on A.GID = B.GID
+select GID, sum(marks) from students group by GID
+select name from students where marks = (select marks from students where name='sita')
+select GNAME from groupss where  GID=3
